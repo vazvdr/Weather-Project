@@ -1,28 +1,28 @@
 <?php
 
-    require_once"conexao.php";
+    require_once"connection.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nome = $_POST["nome"];
         $cidade = $_POST["cidade"];
         $email = $_POST["email"];
+        $username = $_POST["username"];
         $senha = $_POST["senha"];
-        $hashed_password = password_hash($senha, PASSWORD_DEFAULT);
+                
+        $hashed_password = password_hash($senha, PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO usuarios (nome, cidade, email, senha) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (nome,cidade,email,username,senha) VALUES ('$nome','$cidade','$email','$username','$hashed_password')";
 
-        $stmt = $conexao->prepare($sql);
-        $stmt->bind_param("ssss", $nome, $cidade, $email, $hashed_password); 
+        $stmt = $conn->prepare($sql);
 
         if ($stmt->execute()) {
             echo "Usuário cadastrado com sucesso";
-            header("Location: login.php");
+            header("Location: index.php");
         } else {
-            echo "Erro: " . $sql . "<br>" . $conexao->error;
+            echo "Erro: " . $sql . "<br>" . $conn->error;
             
         }
         $stmt->close();
     }
-    $conexao->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@
                 <h1>Cadastro</h1>
                 <p id="welcome"><strong>Seja bem-vindo(a). Faça seu cadastro abaixo:.</strong></p>
                 <form action="cadastro.php" method="post" autocomplete="on">
-                    <div class="campo">
+                <div class="campo">
                         <span class="material-symbols-outlined">person</span>
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="inome" placeholder="Seu nome completo" required autocomplete="name" maxlength="30">
@@ -60,6 +60,11 @@
                         <label for="login">E-mail</label>
                     </div>
                     <div class="campo">
+                        <span class="material-symbols-outlined">person</span>
+                        <label for="nome">Login</label>
+                        <input type="text" name="username" id="inome" placeholder="Seu usuario para login" required autocomplete="name" maxlength="30">
+                    </div>
+                    <div class="campo">
                         <span class="material-symbols-outlined">lock</span>
                         <input type="password" name="senha" id="isenhac" placeholder="Sua senha" autocomplete="current-password" required maxlength="20">
                         <label for="senha">Senha</label>
@@ -67,7 +72,7 @@
                     
                     <input type="submit" value="Cadastrar">
 
-                    <a class="botao" href="login.php">Login <span class="material-symbols-outlined">person</span></a>
+                    <a class="botao" href="index.php">Login <span class="material-symbols-outlined">person</span></a>
 
                 </form>
             </div>
