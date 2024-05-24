@@ -1,4 +1,14 @@
+<?php
 
+session_start();
+
+include("validate.php");
+
+if (!isset($_SESSION["usuario logado"])){
+	header("location: index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +28,11 @@
     <link rel="stylesheet" href="estilo.css" />
     <script src="scripts.js" defer></script>
   </head>
+  
   <body>
+    <div style="float: right">
+      <button><a href="logout.php">Logout</a></button>
+    </div>
     <div class="container">
       <div class="form">
         <h3>Confira o clima de uma cidade:</h3>
