@@ -1,16 +1,3 @@
-<?php
-
-if(!isset($_GET['deslogar'])){
-
-	$_GET['deslogar']='FALSE';
-
-	//$converted_res = $res ? 'true' : 'false';
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +17,7 @@ if(!isset($_GET['deslogar'])){
             <div id="formulario">
                 <h1>Login</h1>
                 <p id="welcome">Seja bem-vindo(a). Faça login e veja as atualizações climáticas mais recentes.</p>
-				<form action=<?php echo "validate.php?deslogar=" .$_GET["deslogar"] ?> method="post">
+				<form action="validate.php" method="post">
 					<div id="imagem"></div>
 
 						<div class="campo">

@@ -9,13 +9,7 @@ function test_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-// if(!isset($_GET['deslogar'])){
 
-// 	$_GET['deslogar']='FALSE';
-	
-
-// 	//$converted_res = $res ? 'true' : 'false';
-// }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	session_start();
@@ -32,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$hashed_password = password_verify($password, $user['senha']);
 
 		if(($user['username'] == $username) && 
-			($hashed_password) && $_GET['deslogar']=="FALSE") {
+			($hashed_password)) {
 				$control = 1;
 				$_SESSION["usuario logado"] = $username;
 				header("location: home.php");	
