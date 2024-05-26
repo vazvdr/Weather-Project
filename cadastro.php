@@ -12,7 +12,6 @@
         $hashed_password = password_hash($senha, PASSWORD_BCRYPT);
 
         $sql = "INSERT INTO usuarios (nome,cidade,email,username,senha) VALUES ('$nome','$cidade','$email','$username','$hashed_password')";
-
         $stmt = $conn->prepare($sql);
 
         if ($stmt->execute()) {
@@ -20,10 +19,9 @@
             header("Location: index.php");
         } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
-            
         }
         $stmt->close();
-    }
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">

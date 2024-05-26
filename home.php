@@ -8,6 +8,21 @@ if (!isset($_SESSION["usuario logado"])){
 	header("location: index.php");
 }
 
+$dsn = 'mysql:host=localhost;dbname=cadastro-weather';
+$usuario = "root";
+$senha = "";
+try{
+
+    $conexao = new PDO ($dsn, $usuario, $senha);
+    $select = 'SELECT * FROM (SELECT * FROM buscas ORDER BY id DESC LIMIT 8) AS last_eight_records
+    ORDER BY id DESC';
+    $stmt = $conexao->query($select);
+    $cidades = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+} catch (PDOException $erro){
+    echo 'ERRO:' .$e->getCode(). ' Mensagem: ' .$e->getMessage();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,24 +43,26 @@ if (!isset($_SESSION["usuario logado"])){
     <link rel="stylesheet" href="estilo.css" />
     <script src="scripts.js" defer></script>
   </head>
-  
-  <body>
-    <div style="float: right">
-      <button><a href="logout.php">Logout</a></button>
+  <body id="bodyInicial">
+    <div id="button">
+      <button class="buttons" onclick="summerMode()"><strong> Summer Mode</strong></button>
+      <button class="buttons" onclick="snowMode()"><strong>Snow Mode</strong></button>
+      <button class="buttons" onclick="CloudMode()"><strong>Cloud Mode</strong></button>
+      <button class="buttons"><a href="logout.php"><strong>Logout</strong></a></button>
     </div>
-    <div class="container">
+    <div class="container" id="container">
       <div class="form">
         <h3>Confira o clima de uma cidade:</h3>
+        <form action="historico.php" method="post">
         <div class="form-input-container">
-          <input
-          type="text"
-          placeholder="Digite o nome da cidade"
-          id="city-input"
-        />
-        <button id="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        </div>
+        <label for="cidade"></label>        
+        <input type="submit" placeholder="Digite o nome de uma cidade cidade" id="submitar" value="Salvar"/>            
+        <input type="text" placeholder="Digite o nome da cidade" id="city-input" name="cidade" value="" />
+            <button id="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          </div>
       </div>
       <div id="weather-data" class="hide">
         <h2><i class="fa-solid fa-location-dot"></i> <span id="city"></span> <img id="country"></h2>
@@ -72,15 +89,35 @@ if (!isset($_SESSION["usuario logado"])){
         <i class="fa-solid fa-spinner"></i>
       </div>
       <div id="suggestions">
-        <button id="viena">Viena</button>
-        <button id="copenhague">Copenhague</button>
-        <button id="zurique">Zurique</button>
-        <button id="vancouver">Vancouver</button>
-        <button id="genebra">Genebra</button>
+        <button id="rio de janeiro">Rio de Janeiro</button>
+        <button id="sao paulo">São Paulo</button>
+        <button id="curitiba">Curitiba</button>
+        <button id="Bahia">Bahia</button>
+        <button id="londres">Londres</button>
         <button id="frankfurt">Frankfurt</button>
-        <button id="osaka">Osaka</button>
-        <button id="maceio">Maceió</button>
+        <button id="dublin">Dublin</button>
+        <button id="california">California</button>
       </div>
-    </div>
+      <div>
+        <table id="tableInicial">
+          <th>Cidades buscadas</th>
+          <tr>
+            <td><?php echo $cidades[0]->cidades;?></td>
+          </tr>  
+          <tr>
+            <td><?php echo $cidades[1]->cidades;?></td>
+          </tr>
+          <tr>
+            <td><?php echo $cidades[2]->cidades;?></td>
+          </tr>
+          <tr>
+          <td><?php echo $cidades[3]->cidades;?></td>
+          </tr>
+          <tr>
+          <td><?php echo $cidades[4]->cidades;?></td>
+          </tr>
+        </table>
+      </div>
+    </div>    
   </body>
 </html>

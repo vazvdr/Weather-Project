@@ -36,9 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($control == 0) {
 			session_destroy();
 			header("location: index.php?falhou=true");
-			//echo "<script language='javascript'>";
-			//echo "alert('WRONG INFORMATION')";
-			//echo "</script>";
 			
 	}
 }

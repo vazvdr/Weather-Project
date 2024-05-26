@@ -8,3 +8,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `senha` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+SELECT * FROM (SELECT * FROM buscas ORDER BY id DESC LIMIT 5) AS last_five_records
+    ORDER BY id DESC

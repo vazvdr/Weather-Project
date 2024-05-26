@@ -20,6 +20,7 @@ const loader = document.querySelector("#loader");
 
 const suggestionContainer = document.querySelector("#suggestions");
 const suggestionButtons = document.querySelectorAll("#suggestions button");
+const tableList = document.querySelector("#tableInicial table");
 
 // Loader
 const toggleLoader = () => {
@@ -102,3 +103,19 @@ suggestionButtons.forEach((btn) => {
     showWeatherData(city);
   });
 });
+
+function summerMode(){
+  document.getElementById('container').className = 'containerSummer';
+  document.getElementById('bodyInicial').className = 'bodySummer';
+  document.getElementById('tableInicial').className = 'tableSummer';
+}
+function snowMode(){
+  document.getElementById('bodyInicial').className = 'bodyWinter';
+  document.getElementById('container').className = 'container';
+  document.getElementById('tableInicial').className = 'tableSnow';
+}
+function CloudMode(){
+  document.getElementById('container').className = 'containerCloud';
+  document.getElementById('bodyInicial').className = 'bodyCloud';
+  document.getElementById('tableInicial').className = 'tableCloud';
+}

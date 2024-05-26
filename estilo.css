@@ -1,165 +1,337 @@
 
 /* Geral */
 * {
-    padding: 0;
-    margin: 0;
-    font-family: "Ubuntu", sans-serif;
-  }
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+#button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+.buttons{
+  width: 95px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  opacity: 0.75;
+  font-weight: bold;
+  color: rgb(17, 5, 5);
+  border: none;
+  margin: 0.8rem; 
+  cursor: pointer;   
+}
+#logout{
+  cursor: pointer;
+  width: 95px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  opacity: 0.75;
+  font-weight: bold;
+  color: rgb(17, 5, 5);
+  border: none;
+  margin: 0.8rem;    
+}
+#submitar{
+  background-color: rgb(17, 5, 5) ;
+  color: aliceblue;
+}
+.buttons:hover{
+  opacity: 1;
+  background-color: rgb(17, 5, 5) ;
+  color: aliceblue;
+}
+body {
+  background: linear-gradient(180deg, rgb(244, 244, 247) 0%, #bdc8ce 100%);
+  display: block;
+  size: 100vh; 
+  background-position: center;
+  background-size: cover;
   
-  body {
-    background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  
+}
+.bodySnow {
+  background: linear-gradient(180deg, rgb(244, 244, 247) 0%, #bdc8ce 100%);
+  display: block;
+  size: 100vh; 
+  background-position: center;
+  background-size: cover;
+}
+.bodyCloud {
+  background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);
+  display: block;
+  size: 100vh; 
+  background-position: center;
+  background-size: cover;
+}
+.bodySummer{    
+    background: linear-gradient(to top, #ffdd01, #f11713);
+    display: block;
+    size: 100vh; 
     background-position: center;
     background-size: cover;
   }
+.hide {
+  display: none !important;
+}
+.container {
+  background-color: white;
+  opacity: 0.8;
+  box-shadow: rgba(1.0, 1.0, 1.0, 1.0) 0px 3px 8px;
+  padding: 2rem;
+  color:rgb(28, 13, 13);
+  border-radius: 1rem;
+  max-width: 400px;
+  height: 500px;
+  margin: auto;
+}
+.containerCloud {
+  background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);  
+  box-shadow: rgba(1.0, 1.0, 1.0, 1.0) 0px 3px 8px;
+  padding: 2rem;
+  color: rgb(28, 13, 13);
+  border-radius: 1rem;
+  max-width: 400px;
+  height: 500px;
+  margin: auto;
+  opacity: 0.8;
+}
+.containerSummer {
+  background: linear-gradient(to top, #ffdd01, #f11713);
+  box-shadow: rgba(1.0, 1.0, 1.0, 1.0) 0px 3px 8px;
+  padding: 2rem;
+  color: rgb(28, 13, 13);
+  border-radius: 1rem;
+  max-width: 400px;
+  height: 500px;
+  margin: auto;
+  opacity: 0.8;
+}
+table{
+  margin: auto;
+  color: black;
+  background: linear-gradient(180deg, rgb(218, 218, 240) 0%, #fafbfb 100%);
+  width: 300px;
+  border-collapse: collapse;
+}
+.tableSnow{
+  margin: auto;
+  color: black;
+  background: linear-gradient(180deg, rgb(218, 218, 240) 0%, #fafbfb 100%);
+  width: 300px;
+  border-collapse: collapse;
+}
+.tableCloud{
+  margin: auto;
+  color: black;
+  background: linear-gradient(180deg, rgb(194, 190, 234) 0%, #8dd0f5 100%);
+  width: 300px;
+  border-collapse: collapse;
+}
+.tableSummer{
+  margin: auto;
+  color: black;
+  background: linear-gradient(to right, #ffdd01, #f19513);
+  width: 300px;
+  border-collapse: collapse;
+}
+
+th{
+  border: 1px solid black;
+  padding: 1px;
+  text-align: center;
+}
+td{
+  border: 1px solid black;
+  padding: 1px;
+  text-align: center;
+
+}
+th{
+  text-transform: uppercase;
+  font-size: 90%;
+  letter-spacing: 0.05em;
+  font-style: oblique;
+}
+tr:hover{
+  background-color: rgb(40, 28, 28);
+  color: white;
+}
+
+.buttonTableSummer{
+  background: linear-gradient(to top, #ffdd01, #f19513);
+  color: black;
+  float: right;
+}
+.buttonTableCloud{
+  background: linear-gradient(180deg, rgb(194, 190, 234) 0%, #8dd0f5 100%);
+  color: black;
+  float: right;
+}
+.buttonTableSnow{
+  background: linear-gradient(180deg, rgb(218, 218, 240) 0%, #fafbfb 100%);
+  color: black;
+  float: right;
+}
+
+/* Form */
+.form h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-input-container {
+  display: flex;
+  border: 1px solid black;
   
-  .hide {
-    display: none !important;
+}
+
+.form input {
+  padding: 0.8rem;
+  border: none;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.form button {
+  padding: 0.8rem;
+  min-width: 50px;
+  margin-left: 8px;
+  background-color: rgb(28, 13, 13);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Clima */
+#weather-data,
+#error-message,
+#loader,
+#suggestions {
+  border-top: 3px solid black;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+#weather-data h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+#weather-data h2 i {
+  font-size: 1rem;
+}
+
+#weather-data span {
+  margin: 0.6rem;
+}
+
+#temperature {
+  font-size: 4rem;
+}
+
+#country {
+  height: 15px;
+}
+
+#description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.6rem 0;
+}
+
+#description {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#details-container #umidity {
+  border-right: 1px solid #fff;
+  margin: 0.6rem;
+  padding: 0.6rem;
+}
+
+/* Loader */
+#loader i {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
   }
+}
+
+/* Sugestões */
+#suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#suggestions button {
+  min-width: 150px;
+  margin: 0.8rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10rem;
   
-  .container {
-    background-color: #5c54ed;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 2rem;
-    color: #fdfdfd;
-    border-radius: 1rem;
-    max-width: 400px;
-  }
-  
-  /* Form */
-  .form h3 {
-    margin-bottom: 1rem;
-  }
-  
-  .form-input-container {
-    display: flex;
-  }
-  
-  .form input {
-    padding: 0.8rem;
-    border: none;
-    flex: 1;
-    border-radius: 4px;
-  }
-  
-  .form button {
-    padding: 0.8rem;
-    min-width: 50px;
-    margin-left: 8px;
-    background-color: #8dd0f5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  /* Clima */
-  #weather-data,
-  #error-message,
-  #loader,
-  #suggestions {
-    border-top: 1px solid #fff;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    text-align: center;
-  }
-  
-  #weather-data h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.6rem;
-  }
-  
-  #weather-data h2 i {
-    font-size: 1rem;
-  }
-  
-  #weather-data span {
-    margin: 0.6rem;
-  }
-  
-  #temperature {
-    font-size: 4rem;
-  }
-  
-  #country {
-    height: 15px;
-  }
-  
-  #description-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.6rem 0;
-  }
-  
-  #description {
-    text-transform: capitalize;
-    font-weight: bold;
-  }
-  
-  #details-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #details-container #umidity {
-    border-right: 1px solid #fff;
-    margin: 0.6rem;
-    padding: 0.6rem;
-  }
-  
-  /* Loader */
-  #loader i {
-    animation: rotate 1.5s linear infinite;
-  }
-  
-  @keyframes rotate {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Sugestões */
-  #suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #suggestions button {
-    min-width: 150px;
-    margin: 0.8rem;
-    padding: 0.6rem 0.9rem;
-    border-radius: 10rem;
-    border: none;
-    background-color: #8dd0f5;
-    color: rgb(17, 5, 5);
-    cursor: pointer;
-    font-weight: bold;
-    opacity: 0.8;
-    transition: 0.4s;
-  }
-  
-  #suggestions button:hover {
-    opacity: 1;
-  }
+  background-color: white;
+  color: rgb(17, 5, 5);
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+#suggestions button:hover {
+  opacity: 1;
+  background-color: rgb(17, 5, 5) ;
+  color: aliceblue;
+}
 #hot{
-    float: right;
-    margin-top: 0;
-    margin-right: 0;
-    background-color: orangered;
+  float: right;
+  margin-top: 0;
+  margin-right: 0;
+  background-color: orangered;
 }
 #cold{
-    float: right;
+  float: right;
 }
 #menu-buttons{
-    padding-bottom: 20px;
-    justify-content: center;
+  padding-bottom: 20px;
+  justify-content: center;
 }
+.table{
+margin: 32%;
+padding-top: 0.3%;
+padding-bottom: 0.3%;
+width: 600px;
+justify-content: center;
+align-items: center;
+word-spacing: 10px;
+margin: 0.8rem;
+color: rgb(28, 13, 13);
+background-color: white;
+opacity: 0.7;  
+}
+
+
