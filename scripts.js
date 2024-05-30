@@ -1,4 +1,4 @@
-const apiKey = "6605ccc65869cc9c3ad42a6d0fab22f9";
+const apiKey = "Acess https://openweathermap.org/api and get your API key;
 const apiCountryURL = "https://countryflagsapi.com/png/";
 const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
