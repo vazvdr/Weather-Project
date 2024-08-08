@@ -9,3 +9,10 @@ https://github.com/vazvdr/Weather-Project/assets/127865294/3ce2521b-2896-452b-bf
 
 https://github.com/vazvdr/Weather-Project/assets/127865294/9a87f6f0-aa9d-4066-8fd9-af90819c2f3e
 
+
+<h2>Resultado da branch Media-Querie com a versão para Mobile</h2>
+
+
+
+https://github.com/user-attachments/assets/3827c271-ef9b-4dd2-a6e5-6a63cb793211
+
